@@ -28,10 +28,9 @@ public class AdminController {
     public String getAdminPage(Principal principal, Model model) {
         model.addAttribute("newUser", new User());
         model.addAttribute("user", userService.findByUsername(principal.getName()));
-        //model.addAttribute("updateUser", new User());
         model.addAttribute("users", userService.getAllUsers());
         model.addAttribute("roles", roleService.getAllRoles());
-        model.addAttribute("allRoles", roleService.getAllRoles());
+
         return "admin/admin";
     }
 
